@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+   {% block css %}
+   {% endblock %}
+
+
+   {% block css_record %}
+   {% endblock %}
+   {% block css_add%}
+   {% endblock %}
+
+
+   {% block style %}
+   {% endblock %}
+</head>
+<body>
+
+    <header class="header">
+        <h2>Django CRM</h2>
+        <nav>
+           
+            <ul>
+                
+                <li><a href={% block link %} {% block link_add  %} {% block register %}'{% url "login" %}' {% endblock %}{% endblock %} {% endblock %} >{% block home %}{% block add_record %}{% block add_register %}Login {% endblock %}{% endblock %}{% endblock %}</a></li>
+                 <li><a href={% block log_out %} {% endblock %}>{% block out %}{% endblock %}</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    {% block record %}
+    {% endblock %}
+    {% block adds %}
+    {% endblock %}
+   {% block signup %}
+   {% endblock %}
+    {%  block login_form %}
+{% endblock %}
+</body>
+</html>

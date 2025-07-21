@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<p>
+    Name:{{sadik.name}}
+</p>
+<p>
+    id:{{sadik.id}}
+</p>
+<p>
+    street:{{sadik.street}}
+</p>
+<p>
+    city:{{sadik.city}}
+</p>
+<p>
+    Postal_code:{{sadik.postal_code}}
+</p>
+<form>
+<div>
+
+    <button style='background-color: rgb(239, 55, 74)'  type="submit"> <a href='{% url "goge" sadik.name %}'>Delete</a></button>
+    <button style='background-color: rgb(55, 239, 116)' type="submit"><a href='{% url "record1"  %}'>Records</a></button>
+</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,56 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block css_add %} <link rel="stylesheet" href="{% static 'add.css' %}">{% endblock %}
+</head>
+<body>
+    {% block add_register %}
+    Register
+    {% endblock %}
+    
+    {% block register %}
+
+    {% url 'record1' %}
+
+    {% endblock %}
+    {% block adds %}
+    <div class="new">
+        <h1 >Add New Record </h1>
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+    <div>
+        <input type="text" name="name" placeholder="firstt name">
+    </div>
+    <div>
+        <input type="text" name="street" placeholder="street">
+    </div>
+    <div>
+        <input type="text" name="city" placeholder="city">
+    </div>
+    <div>
+        <input type="text" name="state" placeholder="state">
+    </div>
+    <div>
+        <input type="number" name="zipcode" placeholder="zipcode">
+    </div>
+    <div>
+        <input type="number" name="id" placeholder="id">
+    </div>
+    <div>
+        <button type="submit">
+            Submit
+        </button>
+    </div>
+
+    </form>
+    {% endblock %}
+</body>
+</html>

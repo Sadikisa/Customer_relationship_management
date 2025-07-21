@@ -1,0 +1,73 @@
+{% extends 'home.html' %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ {% block css_record %} <link rel="stylesheet" href="{% static 'record.css' %}">
+ {% endblock %}
+</head>
+<body>
+  {% block log_out %}
+  '{% url "log_out" %}''
+ {% endblock %}
+  {% block out %}
+  Logout
+  {% endblock %}
+  {% block link_add %}
+  '{% url "adds" %}'
+  {% endblock %}
+  {% block add_record %}
+  Add Records
+  {% endblock %}
+  {%  block record %}
+  
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+          <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+{% endif %}
+ 
+    <h1>Welcome</h1>
+  {% if has_error %}
+    <table>
+        <th>There is not record</th>
+    </table>
+  {% else %}
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Street</th>
+        <th>City</th>
+        <th>State</th>
+        <th>Zipcode</th>
+        
+        <th>ID</th>
+      </tr>
+      {% for i in record %}
+      <tr>
+<td>{{i.name}}</td>
+<td>{{i.street}}</td>
+<td>{{i.city}}</td>
+<td>{{i.state}}</td>
+<td>{{i.postal_code}}</td>
+<td><a href="{% url 'sadik' i.name %}">{{ i.id }}</a></td>
+
+
+
+      </tr>
+{% endfor %}
+      
+   
+    </table>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

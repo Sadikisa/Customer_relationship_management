@@ -1,0 +1,24 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: flex-start;
+   align-items: center;
+    background-color: rgb(142, 133, 133);
+
+}
+.header nav ul{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+.header li a,.header li{
+    text-decoration: none;
+    list-style: none;
+    margin-left: 10px;
+    font-size: 20px;
+}
